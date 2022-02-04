@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Application.Interface;
+using Application.ViewModel.Request;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Net;
@@ -9,17 +11,24 @@ namespace API.Controller
     [ApiController]
     public class AssociadoController : ControllerBase
     {
+        private readonly IAssociadoAppService _associadoAppService;
+
+        public AssociadoController(IAssociadoAppService associadoAppService)
+        {
+            _associadoAppService = associadoAppService;
+        }
 
         // POST api/values
         [HttpPost]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(int))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(string))]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError, Type = typeof(string))]
-        public IActionResult Post([Required][FromBody] string value)
+        public IActionResult Post([Required][FromBody] string key, PostAssociadoViewModel postAssociadoView)
         {
             try
             {
-                int Id = 0;
+
+                int Id = _associadoAppService.PostCadastroAssociado(postAssociadoView);
                 return Ok(Id);
             }
             catch (Exception ex)

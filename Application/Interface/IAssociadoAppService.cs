@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Application.ViewModel.Request;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,8 +8,8 @@ namespace Application.Interface
     public interface IAssociadoAppService
     {
 
-        bool PostCadastroAssociado();
+        int PostCadastroAssociado(PostAssociadoViewModel postAssociadoView);
 
-        int GetCadastroAssociado(int AssociadoId);
+        int GetCadastroAssociado(PostAssociadoViewModel postAssociadoView);
     }
 }

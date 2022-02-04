@@ -1,14 +1,11 @@
 ﻿using Domain.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Infrastructure.Context
 {
-    public class AppContext : DbContext
+    public class Contexto : DbContext
     {
-        public AppContext(DbContextOptions<AppContext> options) : base(options) { }
+        public Contexto(DbContextOptions<Contexto> options) : base(options) { }
 
 
         public DbSet<Associado> Associados { get; set; }

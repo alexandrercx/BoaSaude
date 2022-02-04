@@ -8,11 +8,11 @@ namespace Infrastructure.Repository
     public class Repository<TEntity> : RepositoryBase, IRepository<TEntity> where TEntity : class
     {
 
-        protected readonly Context.AppContext con;
+        protected readonly Context.Contexto con;
         protected readonly DbSet<TEntity> DbSet;
 
 
-        public Repository(Context.AppContext context)
+        public Repository(Context.Contexto context)
         {
             con = context;
             DbSet = con.Set<TEntity>();

@@ -8,9 +8,9 @@ namespace Infrastructure.Repository
 {
     public class AssociadoRepository : Repository<Associado>, IAssociadoRepository
     {
-        private readonly AppContext _context;
+        private readonly Contexto _context;
 
-        public AssociadoRepository(AppContext context) : base(context)
+        public AssociadoRepository(Contexto context) : base(context)
         {
             _context = context;
         }
