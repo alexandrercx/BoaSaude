@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using AutoMapper;
 
 namespace Application.AutoMapper
 {
-   public class DomainToViewModelMapping
+    public class DomainToViewModelMapping : Profile
     {
     }
 }

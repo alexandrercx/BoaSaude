@@ -9,7 +9,9 @@ namespace Application.AutoMapper
 {
     public class ViewModelToDomainMapping : Profile
     {
-        
-       // CreateMap<PostAssociadoViewModel, PostAssociadoModel>();
+        public ViewModelToDomainMapping()
+        {
+            CreateMap<PostAssociadoViewModel, PostAssociadoModel>();
+        }
     }
 }

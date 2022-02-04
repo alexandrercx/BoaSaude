@@ -1,4 +1,5 @@
 ﻿using Application.AutoMapper;
+using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
@@ -14,6 +15,8 @@ namespace API.Configuration
             }
 
             service.AddAutoMapper(typeof(ViewModelToDomainMapping), typeof(DomainToViewModelMapping));
+           
+
         }
     }
 }
