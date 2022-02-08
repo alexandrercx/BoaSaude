@@ -23,13 +23,13 @@ namespace API.Controller
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(int))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(string))]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError, Type = typeof(string))]
-        public IActionResult Post([Required][FromBody] string key, PostAssociadoViewModel postAssociadoView)
+        public IActionResult Post([Required][FromQuery] string key, [Required][FromBody] PostAssociadoViewModel associadoViewModel)
         {
             try
             {
 
-                int Id = _associadoAppService.PostCadastroAssociado(postAssociadoView);
-                return Ok(Id);
+                //  int Id = _associadoAppService.PostCadastroAssociado(postAssociadoView);
+                return Ok(200);
             }
             catch (Exception ex)
             {
