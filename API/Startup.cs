@@ -48,6 +48,7 @@ namespace API
                 });
                 options.ResolveConflictingActions(apiDescriptions => apiDescriptions.First()); //This line
             });
+            services.AddDependencyInjectionSetup();
 
         }
 

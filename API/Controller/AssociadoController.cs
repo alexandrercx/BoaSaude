@@ -28,7 +28,7 @@ namespace API.Controller
             try
             {
 
-                //  int Id = _associadoAppService.PostCadastroAssociado(postAssociadoView);
+                int Id = _associadoAppService.PostCadastroAssociado(associadoViewModel);
                 return Ok(200);
             }
             catch (Exception ex)

@@ -6,8 +6,7 @@ namespace Application.Services
 {
     public class AssociadoAppService : Base, IAssociadoAppService
     {
-
-        public int GetCadastroAssociado(PostAssociadoViewModel postAssociadoView)
+        public int GetCadastroAssociado(int id)
         {
             throw new NotImplementedException();
         }

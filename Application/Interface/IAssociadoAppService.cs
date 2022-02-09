@@ -10,6 +10,6 @@ namespace Application.Interface
 
         int PostCadastroAssociado(PostAssociadoViewModel postAssociadoView);
 
-        int GetCadastroAssociado(PostAssociadoViewModel postAssociadoView);
+        int GetCadastroAssociado(int id);
     }
 }
