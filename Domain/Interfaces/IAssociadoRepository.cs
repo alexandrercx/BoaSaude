@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Domain.Models;
+using System;
 
 namespace Domain.Interfaces
 {
-   public interface IAssociadoRepository
+    public interface IAssociadoRepository
     {
-        int PostCadastroAssociado();
+        Int64 PostCadastroAssociado(Associado associado);
     }
 }

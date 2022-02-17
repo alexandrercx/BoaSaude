@@ -12,7 +12,10 @@ namespace Infrastructure.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+           
             base.OnModelCreating(modelBuilder);
+            
+            //modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
     }
 }

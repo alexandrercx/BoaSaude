@@ -1,9 +1,6 @@
 ﻿using Application.ViewModel.Request;
-using Domain.Models.Request;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using AutoMapper;
+using Domain.Models;
 
 namespace Application.AutoMapper
 {
@@ -11,7 +8,7 @@ namespace Application.AutoMapper
     {
         public ViewModelToDomainMapping()
         {
-            CreateMap<PostAssociadoViewModel, PostAssociadoModel>();
+            CreateMap<PostAssociadoViewModel, Associado>();
         }
     }
 }

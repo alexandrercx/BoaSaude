@@ -1,8 +1,7 @@
 ﻿using Domain.Interfaces;
 using Domain.Models;
 using Infrastructure.Context;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
+using System;
 
 namespace Infrastructure.Repository
 {
@@ -14,10 +13,12 @@ namespace Infrastructure.Repository
         {
             _context = context;
         }
-        public int PostCadastroAssociado()
+        public Int64 PostCadastroAssociado(Associado associado)
         {
-            Associado associado = _context.Associados.AsNoTracking().FirstOrDefault();
-            return associado.Id;
+            _context.Associados.Add(associado);
+            _context.SaveChanges();
+            // Associado associado = _context.Associados.AsNoTracking().FirstOrDefault();
+            return associado.IdAssociado;
         }
     }
 }

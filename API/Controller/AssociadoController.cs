@@ -27,15 +27,13 @@ namespace API.Controller
         {
             try
             {
-
-                int Id = _associadoAppService.PostCadastroAssociado(associadoViewModel);
-                return Ok(200);
+                var Id = _associadoAppService.PostCadastroAssociado(associadoViewModel);
+                return Ok(Id);
             }
             catch (Exception ex)
             {
                 return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
             }
-
         }
 
     }

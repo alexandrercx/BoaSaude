@@ -31,12 +31,16 @@ namespace Infrastructure.Repository
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            // Dispose of unmanaged resources.
+            Dispose(true);
+            // Suppress finalization.
+            GC.SuppressFinalize(this);
         }
 
         public TEntity GetByKey(int id)
         {
-            throw new NotImplementedException();
+            TEntity entity = DbSet.Find(id);
+            return entity;
         }
     }
 }
