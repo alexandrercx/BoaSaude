@@ -18,7 +18,7 @@ namespace Infrastructure.Repository
             _context.Associados.Add(associado);
             _context.SaveChanges();
             // Associado associado = _context.Associados.AsNoTracking().FirstOrDefault();
-            return associado.IdAssociado;
+            return associado.Id;
         }
     }
 }

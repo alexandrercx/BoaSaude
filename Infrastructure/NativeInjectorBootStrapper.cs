@@ -16,6 +16,8 @@ namespace Infrastructure
 
             //Infra
             services.AddScoped<IAssociadoRepository, AssociadoRepository>();
+            services.AddScoped<IPlanoRepository, PlanoRepository>();
+            services.AddScoped<IPlanoFaixaEtariaRepository, PlanoFaixaEtariaRepository>();
         }
     }
 }

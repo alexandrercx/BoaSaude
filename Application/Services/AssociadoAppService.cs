@@ -11,11 +11,16 @@ namespace Application.Services
     {
         private readonly IMapper _mapper;
         private readonly IAssociadoRepository _associadoRepository;
+        private readonly IPlanoRepository _planoRepository;
+        private readonly IPlanoFaixaEtariaRepository _planoFaixaEtariaRepository;
 
-        public AssociadoAppService(IMapper mapper, IAssociadoRepository associadoRepository)
+
+        public AssociadoAppService(IMapper mapper, IAssociadoRepository associadoRepository, IPlanoRepository planoRepository, IPlanoFaixaEtariaRepository planoFaixaEtariaRepository)
         {
             _mapper = mapper;
             _associadoRepository = associadoRepository;
+            _planoRepository = planoRepository;
+            _planoFaixaEtariaRepository = planoFaixaEtariaRepository;
         }
         public int GetCadastroAssociado(int id)
         {
@@ -25,8 +30,12 @@ namespace Application.Services
         public Int64 PostCadastroAssociado(PostAssociadoViewModel postAssociadoView)
         {
             Associado associado = _mapper.Map<Associado>(postAssociadoView);
+            Plano plano = _planoRepository.GetPlano(postAssociadoView.PlanoId);
+            PlanoFaixaEtaria planoFaixaEtaria = _planoFaixaEtariaRepository.GetPlanoFaixaEtaria(plano.Id, postAssociadoView.DataNascimento);
+
             _associadoRepository.PostCadastroAssociado(associado);
-            return associado.IdAssociado;
+
+            return associado.Id;
         }
 
         protected override void Disposing(bool disposing)

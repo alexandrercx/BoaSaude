@@ -9,13 +9,14 @@ namespace Infrastructure.Context
 
 
         public DbSet<Associado> Associados { get; set; }
+        public DbSet<Plano> Planos { get; set; }
+        public DbSet<PlanoFaixaEtaria> PlanoFaixaEtarias { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
            
             base.OnModelCreating(modelBuilder);
             
-            //modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
     }
 }

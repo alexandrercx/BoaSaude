@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace Domain.Models
 {
@@ -10,8 +8,30 @@ namespace Domain.Models
     public class Associado
     {
         [Key]
-        public Int64 IdAssociado { get; set; }
+        public long Id { get; set; }
 
+        [Required]
+        public long CPF { get; set; }
+
+        [Required]
+        [MaxLength(100)]
         public string Nome { get; set; }
+
+        [Required]
+        public DateTime DataNascimento { get; set; }
+
+        [Required]
+        public string NomeMae { get; set; }
+
+        public long? CNS { get; set; }
+
+        public long? PisPasep { get; set; }
+
+        [Required]
+        public string Email { get; set; }
+
+        [Required]
+        public string Senha { get; set; }
+
     }
 }
