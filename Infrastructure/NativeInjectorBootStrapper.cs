@@ -3,7 +3,6 @@ using Application.Services;
 using Domain.Interfaces;
 using Infrastructure.Repository;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 
 namespace Infrastructure
 {
@@ -18,6 +17,8 @@ namespace Infrastructure
             services.AddScoped<IAssociadoRepository, AssociadoRepository>();
             services.AddScoped<IPlanoRepository, PlanoRepository>();
             services.AddScoped<IPlanoFaixaEtariaRepository, PlanoFaixaEtariaRepository>();
+            services.AddScoped<IAssociadoPlanoRepository, AssociadoPlanoRepository>();
+
         }
     }
 }

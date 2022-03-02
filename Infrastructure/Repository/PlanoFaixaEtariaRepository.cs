@@ -20,10 +20,10 @@ namespace Infrastructure.Repository
 
         public PlanoFaixaEtaria GetPlanoFaixaEtaria(long planoId, DateTime dataNascimento)
         {
-            int idade = DateTime.Today.Year - dataNascimento.Year;
+            var idade = DateTime.Today.Year - dataNascimento.Year;
             return  _context.PlanoFaixaEtarias.Where(c => c.PlanoId == planoId 
-                                            && idade >= c.IdadeInicial.Year 
-                                            && idade <= c.IdadeFinal.Year).FirstOrDefault();
+                                            && idade >= c.IdadeInicial 
+                                            && idade <= c.IdadeFinal).FirstOrDefault();
         }
     }
 }

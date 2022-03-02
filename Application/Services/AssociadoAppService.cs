@@ -13,14 +13,16 @@ namespace Application.Services
         private readonly IAssociadoRepository _associadoRepository;
         private readonly IPlanoRepository _planoRepository;
         private readonly IPlanoFaixaEtariaRepository _planoFaixaEtariaRepository;
+        private readonly IAssociadoPlanoRepository _associadoPlanoRepository;
 
 
-        public AssociadoAppService(IMapper mapper, IAssociadoRepository associadoRepository, IPlanoRepository planoRepository, IPlanoFaixaEtariaRepository planoFaixaEtariaRepository)
+        public AssociadoAppService(IMapper mapper, IAssociadoRepository associadoRepository, IPlanoRepository planoRepository, IPlanoFaixaEtariaRepository planoFaixaEtariaRepository, IAssociadoPlanoRepository associadoPlanoRepository)
         {
             _mapper = mapper;
             _associadoRepository = associadoRepository;
             _planoRepository = planoRepository;
             _planoFaixaEtariaRepository = planoFaixaEtariaRepository;
+            _associadoPlanoRepository = associadoPlanoRepository;
         }
         public int GetCadastroAssociado(int id)
         {
@@ -29,12 +31,14 @@ namespace Application.Services
 
         public Int64 PostCadastroAssociado(PostAssociadoViewModel postAssociadoView)
         {
+          
             Associado associado = _mapper.Map<Associado>(postAssociadoView);
             Plano plano = _planoRepository.GetPlano(postAssociadoView.PlanoId);
-            PlanoFaixaEtaria planoFaixaEtaria = _planoFaixaEtariaRepository.GetPlanoFaixaEtaria(plano.Id, postAssociadoView.DataNascimento);
+            PlanoFaixaEtaria planoFaixaEtaria = _planoFaixaEtariaRepository.GetPlanoFaixaEtaria(plano.Id, postAssociadoView.DataNascimento);         
 
             _associadoRepository.PostCadastroAssociado(associado);
-
+            AssociadoPlano associadoPlano = new AssociadoPlano(associado,plano,planoFaixaEtaria);
+            _associadoPlanoRepository.PostAssociadoPlano(associadoPlano);
             return associado.Id;
         }
 
