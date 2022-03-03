@@ -39,5 +39,8 @@ namespace Domain.Models
         [NotMapped]
         public List<Associado> Dependentes { get; set; }
 
+        [NotMapped]
+        public List<Endereco> Enderecos { get; set; }
+
     }
 }

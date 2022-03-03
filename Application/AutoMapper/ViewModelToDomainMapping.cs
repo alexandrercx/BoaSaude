@@ -9,6 +9,7 @@ namespace Application.AutoMapper
         public ViewModelToDomainMapping()
         {
             CreateMap<PostAssociadoViewModel, Associado>();
+            CreateMap<PostEnderecoViewModel, Endereco>();
         }
     }
 }

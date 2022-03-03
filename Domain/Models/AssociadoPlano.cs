@@ -16,7 +16,9 @@ namespace Domain.Models
             this.AssociadoId = associado.Id;
             this.PlanoId = plano.Id;
             this.PlanoFaixaEtariaId = planoFaixaEtaria.Id;
+            this.ValorContratado =  plano.ValorBase + planoFaixaEtaria.ValorAdicional;
             this.DataAtivacao = DateTime.Now;
+
         }
         public AssociadoPlano()
         {
@@ -35,12 +37,12 @@ namespace Domain.Models
         public long PlanoFaixaEtariaId { get; set; }
 
         [Required]
-        public Decimal ValorContratado { get { return plano.ValorBase + planoFaixaEtaria.ValorAdicional; } }
+        public Decimal ValorContratado { get; set; }
 
         [Required]
         public DateTime DataAtivacao { get; set; }
 
-        public DateTime DataInativacao { get; set; }
+        public DateTime? DataInativacao { get; set; }
 
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Application.ViewModel.Request
@@ -40,5 +41,8 @@ namespace Application.ViewModel.Request
         [Required]
         [JsonProperty("senha")]
         public string Senha { get; set; }
+
+        public List<PostEnderecoViewModel> Enderecos { get; set; }
+        
     }
 }

@@ -12,6 +12,9 @@ namespace Infrastructure.Context
         public DbSet<Plano> Planos { get; set; }
         public DbSet<PlanoFaixaEtaria> PlanoFaixaEtarias { get; set; }
         public DbSet <AssociadoPlano> AssociadoPlanos { get; set; }
+        public DbSet<Endereco> Enderecos { get; set; }
+
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {         

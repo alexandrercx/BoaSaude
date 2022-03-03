@@ -14,15 +14,17 @@ namespace Application.Services
         private readonly IPlanoRepository _planoRepository;
         private readonly IPlanoFaixaEtariaRepository _planoFaixaEtariaRepository;
         private readonly IAssociadoPlanoRepository _associadoPlanoRepository;
+        private readonly IEnderecoRepository _enderecoRepository;
 
 
-        public AssociadoAppService(IMapper mapper, IAssociadoRepository associadoRepository, IPlanoRepository planoRepository, IPlanoFaixaEtariaRepository planoFaixaEtariaRepository, IAssociadoPlanoRepository associadoPlanoRepository)
+        public AssociadoAppService(IMapper mapper, IAssociadoRepository associadoRepository, IPlanoRepository planoRepository, IPlanoFaixaEtariaRepository planoFaixaEtariaRepository, IAssociadoPlanoRepository associadoPlanoRepository, IEnderecoRepository enderecoRepository)
         {
             _mapper = mapper;
             _associadoRepository = associadoRepository;
             _planoRepository = planoRepository;
             _planoFaixaEtariaRepository = planoFaixaEtariaRepository;
             _associadoPlanoRepository = associadoPlanoRepository;
+            _enderecoRepository = enderecoRepository;
         }
         public int GetCadastroAssociado(int id)
         {
@@ -39,8 +41,11 @@ namespace Application.Services
             _associadoRepository.PostCadastroAssociado(associado);
             AssociadoPlano associadoPlano = new AssociadoPlano(associado,plano,planoFaixaEtaria);
             _associadoPlanoRepository.PostAssociadoPlano(associadoPlano);
+            Endereco endereco = new Endereco();
+            _enderecoRepository.PostEndereco(associado.Enderecos, associado.Id);
             return associado.Id;
         }
+
 
         protected override void Disposing(bool disposing)
         {
