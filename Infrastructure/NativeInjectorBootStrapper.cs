@@ -19,6 +19,8 @@ namespace Infrastructure
             services.AddScoped<IPlanoFaixaEtariaRepository, PlanoFaixaEtariaRepository>();
             services.AddScoped<IAssociadoPlanoRepository, AssociadoPlanoRepository>();
             services.AddScoped<IEnderecoRepository, EnderecoRepository>();
+            services.AddScoped<ITelefoneRepository, TelefoneRepository>();
+            
 
         }
     }

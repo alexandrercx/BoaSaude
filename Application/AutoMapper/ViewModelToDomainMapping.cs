@@ -10,6 +10,7 @@ namespace Application.AutoMapper
         {
             CreateMap<PostAssociadoViewModel, Associado>();
             CreateMap<PostEnderecoViewModel, Endereco>();
+            CreateMap<PostTelefoneViewModel, Telefone>();
         }
     }
 }

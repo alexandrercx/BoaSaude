@@ -42,5 +42,8 @@ namespace Domain.Models
         [NotMapped]
         public List<Endereco> Enderecos { get; set; }
 
+        [NotMapped]
+        public List<Telefone> Telefones { get; set; }
+
     }
 }

@@ -5,8 +5,6 @@ namespace Application.ViewModel.Request
 {
     public class PostEnderecoViewModel
     {
-        [JsonProperty("endereco_id")]
-        public long Id { get; set; }
 
         [Required]
         [JsonProperty("tipo_endereco")]

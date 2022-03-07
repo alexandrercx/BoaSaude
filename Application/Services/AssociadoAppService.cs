@@ -15,6 +15,7 @@ namespace Application.Services
         private readonly IPlanoFaixaEtariaRepository _planoFaixaEtariaRepository;
         private readonly IAssociadoPlanoRepository _associadoPlanoRepository;
         private readonly IEnderecoRepository _enderecoRepository;
+        private readonly ITelefoneRepository _telefoneRepository;
 
 
         public AssociadoAppService(IMapper mapper, IAssociadoRepository associadoRepository, IPlanoRepository planoRepository, IPlanoFaixaEtariaRepository planoFaixaEtariaRepository, IAssociadoPlanoRepository associadoPlanoRepository, IEnderecoRepository enderecoRepository)
@@ -41,8 +42,8 @@ namespace Application.Services
             _associadoRepository.PostCadastroAssociado(associado);
             AssociadoPlano associadoPlano = new AssociadoPlano(associado,plano,planoFaixaEtaria);
             _associadoPlanoRepository.PostAssociadoPlano(associadoPlano);
-            Endereco endereco = new Endereco();
             _enderecoRepository.PostEndereco(associado.Enderecos, associado.Id);
+            _telefoneRepository.PostTelefone(associado.Telefones, associado.Id);
             return associado.Id;
         }
 

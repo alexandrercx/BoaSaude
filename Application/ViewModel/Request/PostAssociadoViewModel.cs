@@ -43,6 +43,8 @@ namespace Application.ViewModel.Request
         public string Senha { get; set; }
 
         public List<PostEnderecoViewModel> Enderecos { get; set; }
-        
+
+        public List<PostTelefoneViewModel> Telefones { get; set; }
+
     }
 }
