@@ -18,7 +18,7 @@ namespace Application.Services
         private readonly ITelefoneRepository _telefoneRepository;
 
 
-        public AssociadoAppService(IMapper mapper, IAssociadoRepository associadoRepository, IPlanoRepository planoRepository, IPlanoFaixaEtariaRepository planoFaixaEtariaRepository, IAssociadoPlanoRepository associadoPlanoRepository, IEnderecoRepository enderecoRepository)
+        public AssociadoAppService(IMapper mapper, IAssociadoRepository associadoRepository, IPlanoRepository planoRepository, IPlanoFaixaEtariaRepository planoFaixaEtariaRepository, IAssociadoPlanoRepository associadoPlanoRepository, IEnderecoRepository enderecoRepository, ITelefoneRepository telefoneRepository)
         {
             _mapper = mapper;
             _associadoRepository = associadoRepository;
@@ -26,6 +26,7 @@ namespace Application.Services
             _planoFaixaEtariaRepository = planoFaixaEtariaRepository;
             _associadoPlanoRepository = associadoPlanoRepository;
             _enderecoRepository = enderecoRepository;
+            _telefoneRepository = telefoneRepository;
         }
         public int GetCadastroAssociado(int id)
         {
