@@ -7,7 +7,7 @@ namespace Domain.Models
     [Table(name: "Endereco", Schema = "dbo")]
     public class Endereco
     {
-        [Key]
+       
         public long Id { get; set; }
 
         public TipoEndereco TipoEndereco { get; set; }

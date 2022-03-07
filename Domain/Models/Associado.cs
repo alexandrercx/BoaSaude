@@ -8,7 +8,7 @@ namespace Domain.Models
     [Table(name: "Associado" , Schema = "dbo")]
     public class Associado
     {
-        [Key]
+       
         public long Id { get; set; }
 
         [Required]

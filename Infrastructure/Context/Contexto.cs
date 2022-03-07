@@ -18,7 +18,22 @@ namespace Infrastructure.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {         
-            base.OnModelCreating(modelBuilder);    
+          
+
+            modelBuilder.Entity<Associado>().HasKey(p => new { p.Id });
+            modelBuilder.Entity<Associado>().Property(r => r.Id).ValueGeneratedOnAdd();
+
+            modelBuilder.Entity<Endereco>().HasKey(p => new { p.Id });
+            modelBuilder.Entity<Endereco>().Property(r => r.Id).ValueGeneratedOnAdd();
+
+            modelBuilder.Entity<Associado>().HasMany(p => p.enderecos).WithOne().HasForeignKey(p => p.AssociadoId);
+
+
+
+
+
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

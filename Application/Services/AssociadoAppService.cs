@@ -43,11 +43,11 @@ namespace Application.Services
             PlanoFaixaEtaria planoFaixaEtaria = _planoFaixaEtariaRepository.GetPlanoFaixaEtaria(plano.Id, postAssociadoView.DataNascimento);         
 
             _associadoRepository.PostCadastroAssociado(associado);
-            AssociadoPlano associadoPlano = new AssociadoPlano(associado,plano,planoFaixaEtaria);
-            _associadoPlanoRepository.PostAssociadoPlano(associadoPlano);
-            _enderecoRepository.PostEndereco(associado.enderecos, associado.Id);
-            _telefoneRepository.PostTelefone(associado.telefones, associado.Id);
-            _contaBancoRepository.PostContaBanco(associado.contaBanco, associado.Id);
+            //AssociadoPlano associadoPlano = new AssociadoPlano(associado,plano,planoFaixaEtaria);
+            //_associadoPlanoRepository.PostAssociadoPlano(associadoPlano);
+            //_enderecoRepository.PostEndereco(associado.enderecos, associado.Id);
+            //_telefoneRepository.PostTelefone(associado.telefones, associado.Id);
+            //_contaBancoRepository.PostContaBanco(associado.contaBanco, associado.Id);
             return associado.Id;
         }
 
