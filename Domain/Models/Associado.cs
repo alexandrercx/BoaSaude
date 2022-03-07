@@ -37,13 +37,16 @@ namespace Domain.Models
         public long? TitularId { get; set; }
 
         [NotMapped]
-        public List<Associado> Dependentes { get; set; }
+        public List<Associado> dependentes { get; set; }
 
         [NotMapped]
-        public List<Endereco> Enderecos { get; set; }
+        public List<Endereco> enderecos { get; set; }
 
         [NotMapped]
-        public List<Telefone> Telefones { get; set; }
+        public List<Telefone> telefones { get; set; }
+
+        [NotMapped]
+        public ContaBanco contaBanco { get; set; }
 
     }
 }

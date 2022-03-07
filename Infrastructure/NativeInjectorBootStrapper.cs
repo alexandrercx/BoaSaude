@@ -20,7 +20,8 @@ namespace Infrastructure
             services.AddScoped<IAssociadoPlanoRepository, AssociadoPlanoRepository>();
             services.AddScoped<IEnderecoRepository, EnderecoRepository>();
             services.AddScoped<ITelefoneRepository, TelefoneRepository>();
-            
+            services.AddScoped<IContaBancoRepository, ContaBancoRepository>();
+
 
         }
     }

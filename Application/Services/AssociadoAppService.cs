@@ -16,9 +16,10 @@ namespace Application.Services
         private readonly IAssociadoPlanoRepository _associadoPlanoRepository;
         private readonly IEnderecoRepository _enderecoRepository;
         private readonly ITelefoneRepository _telefoneRepository;
+        private readonly IContaBancoRepository _contaBancoRepository;
 
 
-        public AssociadoAppService(IMapper mapper, IAssociadoRepository associadoRepository, IPlanoRepository planoRepository, IPlanoFaixaEtariaRepository planoFaixaEtariaRepository, IAssociadoPlanoRepository associadoPlanoRepository, IEnderecoRepository enderecoRepository, ITelefoneRepository telefoneRepository)
+        public AssociadoAppService(IMapper mapper, IAssociadoRepository associadoRepository, IPlanoRepository planoRepository, IPlanoFaixaEtariaRepository planoFaixaEtariaRepository, IAssociadoPlanoRepository associadoPlanoRepository, IEnderecoRepository enderecoRepository, ITelefoneRepository telefoneRepository, IContaBancoRepository contaBancoRepository)
         {
             _mapper = mapper;
             _associadoRepository = associadoRepository;
@@ -27,6 +28,7 @@ namespace Application.Services
             _associadoPlanoRepository = associadoPlanoRepository;
             _enderecoRepository = enderecoRepository;
             _telefoneRepository = telefoneRepository;
+            _contaBancoRepository = contaBancoRepository;
         }
         public int GetCadastroAssociado(int id)
         {
@@ -43,8 +45,9 @@ namespace Application.Services
             _associadoRepository.PostCadastroAssociado(associado);
             AssociadoPlano associadoPlano = new AssociadoPlano(associado,plano,planoFaixaEtaria);
             _associadoPlanoRepository.PostAssociadoPlano(associadoPlano);
-            _enderecoRepository.PostEndereco(associado.Enderecos, associado.Id);
-            _telefoneRepository.PostTelefone(associado.Telefones, associado.Id);
+            _enderecoRepository.PostEndereco(associado.enderecos, associado.Id);
+            _telefoneRepository.PostTelefone(associado.telefones, associado.Id);
+            _contaBancoRepository.PostContaBanco(associado.contaBanco, associado.Id);
             return associado.Id;
         }
 

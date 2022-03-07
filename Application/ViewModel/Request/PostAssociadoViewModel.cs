@@ -46,5 +46,7 @@ namespace Application.ViewModel.Request
 
         public List<PostTelefoneViewModel> Telefones { get; set; }
 
+        public PostContaBancoViewModel ContaBanco { get; set; }
+
     }
 }

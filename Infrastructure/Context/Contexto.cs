@@ -12,6 +12,7 @@ namespace Infrastructure.Context
         public DbSet <AssociadoPlano> AssociadoPlanos { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<Telefone> Telefones { get; set; }
+        public DbSet<ContaBanco> ContaBancos { get; set; }
 
 
 
