@@ -9,7 +9,6 @@ namespace Domain.Models
     [Table(name: "Telefone", Schema = "dbo")]
     public class Telefone
     {
-        [Key]
         public long Id { get; set; }
 
         [Required]

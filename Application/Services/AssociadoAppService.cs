@@ -40,14 +40,11 @@ namespace Application.Services
           
             Associado associado = _mapper.Map<Associado>(postAssociadoView);
             Plano plano = _planoRepository.GetPlano(postAssociadoView.PlanoId);
-            PlanoFaixaEtaria planoFaixaEtaria = _planoFaixaEtariaRepository.GetPlanoFaixaEtaria(plano.Id, postAssociadoView.DataNascimento);         
+            PlanoFaixaEtaria planoFaixaEtaria = _planoFaixaEtariaRepository.GetPlanoFaixaEtaria(plano.Id, postAssociadoView.DataNascimento);
+            AssociadoPlano associadoPlano = new AssociadoPlano(associado, plano, planoFaixaEtaria);
+            associado.AdicionarPlano(associadoPlano);
 
-            _associadoRepository.PostCadastroAssociado(associado);
-            //AssociadoPlano associadoPlano = new AssociadoPlano(associado,plano,planoFaixaEtaria);
-            //_associadoPlanoRepository.PostAssociadoPlano(associadoPlano);
-            //_enderecoRepository.PostEndereco(associado.enderecos, associado.Id);
-            //_telefoneRepository.PostTelefone(associado.telefones, associado.Id);
-            //_contaBancoRepository.PostContaBanco(associado.contaBanco, associado.Id);
+            _associadoRepository.PostCadastroAssociado(associado);           
             return associado.Id;
         }
 

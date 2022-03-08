@@ -6,7 +6,6 @@ namespace Domain.Models
     [Table(name: "ContaBanco", Schema = "dbo")]
     public class ContaBanco
     {
-        [Key]
         public long Id { get; set; }
 
         [Required]

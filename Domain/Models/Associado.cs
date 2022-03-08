@@ -5,10 +5,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Models
 {
-    [Table(name: "Associado" , Schema = "dbo")]
+    [Table(name: "Associado", Schema = "dbo")]
     public class Associado
     {
-       
+
         public long Id { get; set; }
 
         [Required]
@@ -47,6 +47,15 @@ namespace Domain.Models
 
         [NotMapped]
         public ContaBanco contaBanco { get; set; }
+
+        [NotMapped]
+        public List<AssociadoPlano> associadoPlanos { get; set; }
+
+        public void AdicionarPlano(AssociadoPlano associadoPlano)
+        {
+            associadoPlanos = associadoPlanos == null ? new List<AssociadoPlano>() : associadoPlanos;
+            associadoPlanos.Add(associadoPlano);
+        }
 
     }
 }

@@ -25,7 +25,7 @@ namespace Domain.Models
 
         }
 
-        [Key]
+        
         public long Id { get; set; }
 
         [Required]
