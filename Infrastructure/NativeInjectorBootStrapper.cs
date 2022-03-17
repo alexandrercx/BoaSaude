@@ -1,6 +1,8 @@
 ﻿using Application.Interface;
 using Application.Services;
 using Domain.Interfaces;
+using Domain.Interfaces.RabbitMQ;
+using Infrastructure.RabbitMQ;
 using Infrastructure.Repository;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -21,6 +23,9 @@ namespace Infrastructure
             services.AddScoped<IEnderecoRepository, EnderecoRepository>();
             services.AddScoped<ITelefoneRepository, TelefoneRepository>();
             services.AddScoped<IContaBancoRepository, ContaBancoRepository>();
+
+            //Mensageria RabbitMQ
+            services.AddScoped<IAssociadoPublisher, AssociadoPublisher>();
 
 
         }

@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Interfaces\Uow\" />
     <Folder Include="Models\Response\" />
   </ItemGroup>
 
