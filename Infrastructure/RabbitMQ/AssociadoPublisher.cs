@@ -11,7 +11,15 @@ namespace Infrastructure.RabbitMQ
     {
         public void PublicarAssociado(Associado associado)
         {
-            var factory = new ConnectionFactory() { HostName = "localhost" };
+            // var factory = new ConnectionFactory() { HostName = "localhost" };
+            var factory = new ConnectionFactory()
+            {
+                HostName = "192.168.100.5",
+                Port = AmqpTcpEndpoint.UseDefaultPort,
+                UserName = "associado",
+                Password = "associado"
+            };
+
             using (var connection = factory.CreateConnection())
             {
                 using (var channel = connection.CreateModel())
@@ -21,7 +29,6 @@ namespace Infrastructure.RabbitMQ
                         exclusive: false,
                         autoDelete: false,
                         arguments: null);
-                    int count = 0;
 
                     string message = JsonSerializer.Serialize(associado);
                     var body = Encoding.UTF8.GetBytes(message);
