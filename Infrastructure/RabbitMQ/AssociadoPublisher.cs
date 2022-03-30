@@ -11,7 +11,7 @@ namespace Infrastructure.RabbitMQ
     {
         public void PublicarAssociado(Associado associado)
         {
-            // var factory = new ConnectionFactory() { HostName = "localhost" };
+            
             var factory = new ConnectionFactory()
             {
                 HostName = "192.168.100.5",
