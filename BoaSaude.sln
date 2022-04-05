@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{23DD14B2-3FA
 		Script_Banco_Associado.sql = Script_Banco_Associado.sql
 	EndProjectSection
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{E2E69C3E-E136-4AA8-9FF3-233083910BBA}"
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{328B5841-EF77-40F2-81E5-EB174B2A060C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,10 +40,10 @@ Global
 		{2CAB0B4E-89FF-4D65-911B-2B6D2699ADCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CAB0B4E-89FF-4D65-911B-2B6D2699ADCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CAB0B4E-89FF-4D65-911B-2B6D2699ADCC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E2E69C3E-E136-4AA8-9FF3-233083910BBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E2E69C3E-E136-4AA8-9FF3-233083910BBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E2E69C3E-E136-4AA8-9FF3-233083910BBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E2E69C3E-E136-4AA8-9FF3-233083910BBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{328B5841-EF77-40F2-81E5-EB174B2A060C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{328B5841-EF77-40F2-81E5-EB174B2A060C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{328B5841-EF77-40F2-81E5-EB174B2A060C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{328B5841-EF77-40F2-81E5-EB174B2A060C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
