@@ -43,7 +43,7 @@ namespace Application.Services
             associado.AdicionarPlano(associadoPlano);
 
             _associadoRepository.PostCadastroAssociado(associado);
-           // _associadoPublisher.PublicarAssociado(associado);
+            _associadoPublisher.PublicarAssociado(associado);
 
             ResponseAssociadoViewModel responseAssociado = _mapper.Map<ResponseAssociadoViewModel>(associado);
             return responseAssociado;
