@@ -24,7 +24,7 @@ namespace API.Controller
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ResponseAssociadoViewModel))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(string))]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError, Type = typeof(string))]
-        public IActionResult Post([Required][FromQuery] string key, [Required][FromBody] PostAssociadoViewModel associadoViewModel)
+        public IActionResult Post([Required][FromBody] PostAssociadoViewModel associadoViewModel)
         {
             try
             {
