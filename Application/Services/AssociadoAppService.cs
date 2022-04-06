@@ -1,5 +1,6 @@
 ﻿using Application.Interface;
 using Application.ViewModel.Request;
+using Application.ViewModel.Response;
 using AutoMapper;
 using Domain.Interfaces;
 using Domain.Interfaces.RabbitMQ;
@@ -32,7 +33,7 @@ namespace Application.Services
             throw new NotImplementedException();
         }
 
-        public Int64 PostCadastroAssociado(PostAssociadoViewModel postAssociadoView)
+        public ResponseAssociadoViewModel PostCadastroAssociado(PostAssociadoViewModel postAssociadoView)
         {
 
             Associado associado = _mapper.Map<Associado>(postAssociadoView);
@@ -42,8 +43,10 @@ namespace Application.Services
             associado.AdicionarPlano(associadoPlano);
 
             _associadoRepository.PostCadastroAssociado(associado);
-            _associadoPublisher.PublicarAssociado(associado);
-            return associado.Id;
+           // _associadoPublisher.PublicarAssociado(associado);
+
+            ResponseAssociadoViewModel responseAssociado = _mapper.Map<ResponseAssociadoViewModel>(associado);
+            return responseAssociado;
         }
 
 

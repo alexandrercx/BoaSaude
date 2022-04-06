@@ -1,4 +1,5 @@
 ﻿using Application.ViewModel.Request;
+using Application.ViewModel.Response;
 using System;
 
 namespace Application.Interface
@@ -6,7 +7,7 @@ namespace Application.Interface
     public interface IAssociadoAppService
     {
 
-        Int64 PostCadastroAssociado(PostAssociadoViewModel postAssociadoView);
+        ResponseAssociadoViewModel PostCadastroAssociado(PostAssociadoViewModel postAssociadoView);
 
         int GetCadastroAssociado(int id);
     }

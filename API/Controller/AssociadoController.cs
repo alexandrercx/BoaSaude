@@ -1,5 +1,6 @@
 ﻿using Application.Interface;
 using Application.ViewModel.Request;
+using Application.ViewModel.Response;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -20,15 +21,15 @@ namespace API.Controller
 
         // POST api/values
         [HttpPost]
-        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(int))]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ResponseAssociadoViewModel))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(string))]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError, Type = typeof(string))]
         public IActionResult Post([Required][FromQuery] string key, [Required][FromBody] PostAssociadoViewModel associadoViewModel)
         {
             try
             {
-                var Id = _associadoAppService.PostCadastroAssociado(associadoViewModel);
-                return Ok(Id);
+                var responseAssociado = _associadoAppService.PostCadastroAssociado(associadoViewModel);
+                return Ok(responseAssociado);
             }
             catch (Exception ex)
             {
