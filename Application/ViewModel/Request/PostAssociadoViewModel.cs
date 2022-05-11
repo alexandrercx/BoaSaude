@@ -42,6 +42,10 @@ namespace Application.ViewModel.Request
         [JsonProperty("senha")]
         public string Senha { get; set; }
 
+        [Required]
+        [JsonProperty("ativo")]
+        public string Ativo { get; set; }
+
         public List<PostEnderecoViewModel> Enderecos { get; set; }
 
         public List<PostTelefoneViewModel> Telefones { get; set; }

@@ -36,6 +36,9 @@ namespace Domain.Models
 
         public long? TitularId { get; set; }
 
+        [Required]
+        public string Ativo { get; set; }
+
         [NotMapped]
         public List<Associado> dependentes { get; set; }
 

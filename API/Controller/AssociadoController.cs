@@ -10,6 +10,7 @@ namespace API.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Produces("application/json")]
     public class AssociadoController : ControllerBase
     {
         private readonly IAssociadoAppService _associadoAppService;
@@ -37,5 +38,40 @@ namespace API.Controller
             }
         }
 
+        // GET api/values
+        [HttpGet]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ResponseAssociadoViewModel))]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(string))]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError, Type = typeof(string))]
+        public IActionResult GetByEmail([Required][FromQuery] string email)
+        {
+            try
+            {
+                var responseAssociado = _associadoAppService.GetCadastroAssociado(email);
+                return Ok(responseAssociado);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        // GET api/values
+        [HttpGet("{id}")]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ResponseAssociadoViewModel))]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest, Type = typeof(string))]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError, Type = typeof(string))]
+        public IActionResult GetById([Required][FromRoute] long id)
+        {
+            try
+            {
+                var responseAssociado = _associadoAppService.GetCadastroAssociado(id);
+                return Ok(responseAssociado);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
     }
 }

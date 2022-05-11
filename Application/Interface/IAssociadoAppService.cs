@@ -9,6 +9,8 @@ namespace Application.Interface
 
         ResponseAssociadoViewModel PostCadastroAssociado(PostAssociadoViewModel postAssociadoView);
 
-        int GetCadastroAssociado(int id);
+        ResponseAssociadoViewModel GetCadastroAssociado(long id);
+
+        ResponseAssociadoViewModel GetCadastroAssociado(string email);
     }
 }

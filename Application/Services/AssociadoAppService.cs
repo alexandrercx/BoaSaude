@@ -28,9 +28,12 @@ namespace Application.Services
             _associadoPublisher = associadoPublisher;
         }
 
-        public int GetCadastroAssociado(int id)
+        public ResponseAssociadoViewModel GetCadastroAssociado(long id)
         {
-            throw new NotImplementedException();
+            var associado = _associadoRepository.GetCadastroAssociado(id);
+
+            ResponseAssociadoViewModel responseAssociado = _mapper.Map<ResponseAssociadoViewModel>(associado);
+            return responseAssociado;
         }
 
         public ResponseAssociadoViewModel PostCadastroAssociado(PostAssociadoViewModel postAssociadoView)
@@ -44,6 +47,14 @@ namespace Application.Services
 
             _associadoRepository.PostCadastroAssociado(associado);
             _associadoPublisher.PublicarAssociado(associado);
+
+            ResponseAssociadoViewModel responseAssociado = _mapper.Map<ResponseAssociadoViewModel>(associado);
+            return responseAssociado;
+        }
+
+        public ResponseAssociadoViewModel GetCadastroAssociado(string email)
+        {
+            var associado = _associadoRepository.GetCadastroAssociado(email);
 
             ResponseAssociadoViewModel responseAssociado = _mapper.Map<ResponseAssociadoViewModel>(associado);
             return responseAssociado;
